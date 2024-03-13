@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  video-script-writing-program:
+    build: .
+    ports:
+      - "2021:22"
+    user: $DOCKER_USER:$DOCKER_GROUP
+    volumes:
+      - '../dataset_dir/:/home/Hosting/workspace/dataset_dir:rw'
+      - './:/home/Hosting/workspace:rw'
+      - '~/.ssh:/home/Hosting/.ssh:ro'
